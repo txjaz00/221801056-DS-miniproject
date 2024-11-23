@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Welcome, {{ session['username'] }}</h2>
+        <form method="POST" action="{{ url_for('home') }}">
+            <input type="text" name="degree" placeholder="Degree (e.g., Computer Science)" required>
+            <input type="text" name="skills" placeholder="Skills (e.g., Python, Data Analysis)" required>
+            <button type="submit">Get Job Recommendations</button>
+        </form>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>
